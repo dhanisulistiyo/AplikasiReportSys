@@ -30,7 +30,7 @@ namespace AppReportSystem
                 nama = Console.ReadLine();
                 Console.Write("Masukkan ID : ");
                 id = Console.ReadLine();
-                Console.Write("Masukkan Tanggal Lahir : ");
+                Console.Write("Masukkan Tanggal Lahir (yyyy-mm-dd): ");
                 tgl_lahir = Console.ReadLine();
                 Console.Write("Jenis Kelamin : ");
                 jk = Console.ReadLine();
@@ -46,7 +46,7 @@ namespace AppReportSystem
         //View Student
         public void printStudent()
         {
-
+            Console.Clear();
             var query = from stu in db.Students
                         select new {
                             stu.Id,
