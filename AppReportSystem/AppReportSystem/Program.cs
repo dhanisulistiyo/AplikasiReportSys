@@ -66,6 +66,7 @@ namespace AppReportSystem
         public static void inputData() {
             SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
+            TeacherController pTea = new TeacherController();
 
             BACK:
             Console.Clear();
@@ -112,6 +113,7 @@ namespace AppReportSystem
         public static void viewData() {
             SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
+            TeacherController pTea = new TeacherController();
             BACK:
             Console.Clear();
             Console.WriteLine("Pilih submenu lihat data yang tersedia!");
@@ -158,6 +160,7 @@ namespace AppReportSystem
             BACK:
             SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
+            TeacherController pTea = new TeacherController();
             Console.Clear();
             Console.WriteLine("Pilih submenu edit data yang tersedia!");
             Console.WriteLine("1. Edit Data Siswa");
@@ -204,6 +207,7 @@ namespace AppReportSystem
             BACK:
             SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
+            TeacherController pTea = new TeacherController();
             Console.Clear();
             Console.WriteLine("Pilih submenu delete data yang tersedia!");
             Console.WriteLine("1. Delete Data Siswa");
@@ -248,6 +252,7 @@ namespace AppReportSystem
         public static void printReport() {
             BACK:
             StudentController pStu = new StudentController();
+            TeacherController pTea = new TeacherController();
             Console.Clear();
             Console.WriteLine("Pilih submenu input data yang tersedia!");
             Console.WriteLine("1. Input Data Siswa");
