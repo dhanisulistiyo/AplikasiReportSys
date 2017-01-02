@@ -8,10 +8,9 @@ namespace AppReportSystem
 {
     class Program
     {
+         
         static void Main(string[] args)
         {
-          
-            StudentController intr = new StudentController();
             BACK:
             Console.Clear();
             Console.WriteLine("=====================================");
@@ -65,8 +64,10 @@ namespace AppReportSystem
         }
 
         public static void inputData() {
-            BACK:
+            SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
+
+            BACK:
             Console.Clear();
             Console.WriteLine("Pilih submenu input data yang tersedia!");
             Console.WriteLine("1. Input Data Siswa");
@@ -93,7 +94,7 @@ namespace AppReportSystem
             }
             else if (nomer == "4")
             {
-                deleteData();
+                pSub.inputSubject();
                 goto BACK;
             }
             else if (nomer == "5")
@@ -109,8 +110,9 @@ namespace AppReportSystem
             }
         }
         public static void viewData() {
-            BACK:
+            SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
+            BACK:
             Console.Clear();
             Console.WriteLine("Pilih submenu lihat data yang tersedia!");
             Console.WriteLine("1. Lihat Data Siswa");
@@ -132,7 +134,7 @@ namespace AppReportSystem
             }
             else if (nomer == "3")
             {
-                editData();
+                pSub.printSubject();
                 goto BACK;
             }
             else if (nomer == "4")
@@ -154,6 +156,7 @@ namespace AppReportSystem
         }
         public static void editData() {
             BACK:
+            SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
             Console.Clear();
             Console.WriteLine("Pilih submenu edit data yang tersedia!");
@@ -181,7 +184,7 @@ namespace AppReportSystem
             }
             else if (nomer == "4")
             {
-                deleteData();
+                pSub.editSubject();
                 goto BACK;
             }
             else if (nomer == "5")
@@ -199,6 +202,7 @@ namespace AppReportSystem
         }
         public static void deleteData() {
             BACK:
+            SubjectController pSub = new SubjectController();
             StudentController pStu = new StudentController();
             Console.Clear();
             Console.WriteLine("Pilih submenu delete data yang tersedia!");
@@ -226,7 +230,7 @@ namespace AppReportSystem
             }
             else if (nomer == "4")
             {
-                deleteData();
+                pSub.delSubject();
                 goto BACK;
             }
             else if (nomer == "5")
@@ -285,9 +289,6 @@ namespace AppReportSystem
                 goto BACK;
             }
         }
-
-
-
 
     }
 }
