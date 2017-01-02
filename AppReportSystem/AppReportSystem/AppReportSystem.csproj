@@ -55,9 +55,11 @@
     <Compile Include="Model\SchoolContext.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Subject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentController.cs" />
+    <Compile Include="SubjectController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

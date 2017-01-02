@@ -1,94 +1,80 @@
-﻿
+﻿using AppReportSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AppReportSystem.Model;
-
 
 namespace AppReportSystem
 {
-    public class StudentController 
+    public class SubjectController
     {
         SchoolContext db = new SchoolContext();
         int i;
-        string nama, id, tgl_lahir, jk, kelas, num, answer;
-
+        string nama, id, num, answer;
         //Create Student
-        public void inputStudent()
+        public void inputSubject()
         {
             Console.Clear();
-            
-            Console.Write("Berapa banyak data Siswa yang dimasukkan : ");
+
+            Console.Write("Berapa banyak data Mata Pelajaran yang dimasukkan : ");
             num = Console.ReadLine();
             for (i = 1; i <= Convert.ToInt32(num); i++)
             {
                 Console.Clear();
-                Console.WriteLine("========= Input Data Siswa " + i + " ==========");
-                Console.Write("Masukkan Nama : ");
+                Console.WriteLine("========= Input Data Mata Pelajaran " + i + " ==========");
+                Console.Write("Masukkan Nama Mata Pelajaran : ");
                 nama = Console.ReadLine();
                 Console.Write("Masukkan ID : ");
-                id = Console.ReadLine();
-                Console.Write("Masukkan Tanggal Lahir (yyyy-mm-dd): ");
-                tgl_lahir = Console.ReadLine();
-                Console.Write("Jenis Kelamin : ");
-                jk = Console.ReadLine();
-                Console.Write("Masukkan Kelas : ");
-                kelas = Console.ReadLine();
-                Student t = new Student(nama, id, Convert.ToDateTime(tgl_lahir), jk, kelas);
-                db.Students.Add(t);
+                id = Console.ReadLine();               
+                Subject t = new Subject(nama, id);
+                db.Subjects.Add(t);
                 db.SaveChanges();
             }
         }
         //View Student
-        public void printStudent()
+        public void printSubject()
         {
             Console.Clear();
-            var query = from stu in db.Students
-                        select new {
-                            stu.Id,
-                            stu.Name,
-                            stu.DateOfBirth,
-                            stu.Gender,
-                            stu.ofClass
+            var query = from su in db.Subjects
+                        select new
+                        {
+                            su.IdSubject,
+                            su.Name                           
                         };
-
-            Console.WriteLine("All Data in the database:");
-            Console.WriteLine("|===ID===|===============Nama===============|");
+            Console.WriteLine("|===ID===|=========Nama Mata Pelajaran==========|");
             foreach (var item in query)
             {
-                i = 0; i++;
-                Console.Write("    "+item.Id);
-                Console.WriteLine("      "+item.Name);
+                i = 0;
+                i++;
+                Console.Write("    " + item.IdSubject);
+                Console.WriteLine("      " + item.Name);
                 Console.WriteLine();
-                
-             }
-
+            }
             Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            Console.ReadLine();
         }
         //Delete
-        public void delStudent()
+        public void delSubject()
         {
             back:
             Console.Clear();
-            Console.Write(" Masukkan ID Students: ");
+            Console.Write(" Masukkan ID Mata Pelajaran: ");
             num = Console.ReadLine();
 
-            if (searchstudent(num) == 1)
+            if (searchsubject(num) == 1)
             {
                 sub:
-                this.searchstudent(num);
+                this.searchsubject(num);
                 Console.WriteLine("Cek isi data. Lanjutkan Hapus data? y or n");
                 answer = Console.ReadLine();
                 if (answer.ToLower() == "y")
                 {
                     Console.Clear();
-                    Student c = (from x in db.Students
-                                 where x.Id == num
+                    Subject c = (from x in db.Subjects
+                                 where x.IdSubject == num
                                  select x).First();
-                    db.Students.Remove(c);
+                    db.Subjects.Remove(c);
                     db.SaveChanges();
                     Console.WriteLine("Data has been deleted ................");
                     Console.ReadLine();
@@ -104,8 +90,6 @@ namespace AppReportSystem
                     Console.ReadLine();
                     goto sub;
                 }
-
-
             }
             else
             {
@@ -114,53 +98,40 @@ namespace AppReportSystem
                 Console.ReadLine();
                 goto back;
             }
-
-
         }
         //Delete
-        public void editStudent()
+        public void editSubject()
         {
             back:
             Console.Clear();
             Console.Write(" Masukkan ID Students: ");
             num = Console.ReadLine();
-            
-            if (searchstudent(num) != null)
+
+            if (searchsubject(num) != null)
             {
                 sub:
-                this.searchstudent(num);
+                this.searchsubject(num);
                 Console.WriteLine("Cek isi data. Lanjutkan Edit data? y or n");
                 answer = Console.ReadLine();
                 if (answer.ToLower() == "y")
                 {
                     Console.Clear();
-                    Student c = (from x in db.Students
-                                 where x.Id == num
+                    Subject c = (from x in db.Subjects
+                                 where x.IdSubject == num
                                  select x).First();
 
                     Console.Write("Masukkan Nama : ");
                     nama = Console.ReadLine();
-                    Console.Write("Masukkan Tanggal Lahir (yyyy-mm-dd): ");
-                    tgl_lahir = Console.ReadLine();
-                    Console.Write("Jenis Kelamin : ");
-                    jk = Console.ReadLine();
-                    Console.Write("Masukkan Kelas : ");
-                    kelas = Console.ReadLine();
 
                     if (nama != "")
                         c.Name = nama;
-                    if (tgl_lahir != "")
-                        c.DateOfBirth = Convert.ToDateTime(tgl_lahir);
-                    if (jk != "")
-                        c.Gender = jk;
-                    if (kelas != "")
-                        c.ofClass = kelas;
-
+                
                     db.SaveChanges();
+
                     Console.Clear();
                     Console.WriteLine("Data saved....");
                     Console.ReadLine();
-                    searchstudent(num);
+                    searchsubject(num);
                     Console.WriteLine("Kembali edit data? y or n");
                     answer = Console.ReadLine();
                     if (answer.ToLower() == "y")
@@ -172,7 +143,7 @@ namespace AppReportSystem
                         return;
                     }
 
-                    }
+                }
                 else if (answer.ToLower() == "n")
                 {
                     goto back;
@@ -190,34 +161,24 @@ namespace AppReportSystem
                 Console.WriteLine("Id yang dimasukkan salah................");
                 Console.ReadLine();
                 goto back;
-
-
-
             }
-           
         }
         //Search
-        public int searchstudent(string id) {
+        public int searchsubject(string id)
+        {
 
-            var query = from stu in db.Students
-                        where (stu.Id.Equals(id))
+            var query = from su in db.Subjects
+                        where (su.IdSubject.Equals(id))
                         select new
                         {
-                            stu.Id,
-                            stu.Name,
-                            stu.DateOfBirth,
-                            stu.Gender,
-                            stu.ofClass
+                            su.IdSubject,
+                            su.Name     
                         };
             foreach (var item in query)
             {
                 Console.Clear();
-                Console.WriteLine("ID               : " + item.Id);
+                Console.WriteLine("ID               : " + item.IdSubject);
                 Console.WriteLine("Nama             : " + item.Name);
-                Console.WriteLine("Tanggal Lahir    : " + item.DateOfBirth);
-                Console.WriteLine("Jenis Kelamin    : " + item.Gender);
-                Console.WriteLine("Kelas            : " + item.ofClass);
-                
             }
             if (query.Count() == 0)
                 return 0;

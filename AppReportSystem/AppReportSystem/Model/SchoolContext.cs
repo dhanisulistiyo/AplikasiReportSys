@@ -10,6 +10,6 @@ namespace AppReportSystem.Model
     public class SchoolContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
-
+        public DbSet<Subject> Subjects { get; set; }
     }
 }
