@@ -10,8 +10,8 @@ namespace AppReportSystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test");
-            Console.WriteLine("Test by Satria");
+            StudentController intrStu = new StudentController();
+            intrStu.inputStudent();
         }
     }
 }
