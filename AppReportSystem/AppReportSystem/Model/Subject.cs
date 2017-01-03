@@ -10,6 +10,9 @@ namespace AppReportSystem.Model
     {
         public string Name { get; set; }
         public string IdSubject { get; set; }
+        public string Kurikulum { get; set; }
+        public string Guru { get; set; }
+        public int NilaiKKM { get; set; }
 
         public Subject()
         {
