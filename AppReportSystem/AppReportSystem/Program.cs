@@ -133,7 +133,7 @@ namespace AppReportSystem
             }
             else if (nomer == "2")
             {
-                viewData();
+                pTea.printTeacher();
                 goto BACK;
             }
             else if (nomer == "3")
@@ -179,7 +179,7 @@ namespace AppReportSystem
             }
             else if (nomer == "2")
             {
-                viewData();
+                pTea.editTeacher();
                 goto BACK;
             }
             else if (nomer == "3")
@@ -226,7 +226,7 @@ namespace AppReportSystem
             }
             else if (nomer == "2")
             {
-                viewData();
+                pTea.delTeacher();
                 goto BACK;
             }
             else if (nomer == "3")
@@ -271,7 +271,7 @@ namespace AppReportSystem
             }
             else if (nomer == "2")
             {
-                viewData();
+                pTea.inputTeacher();
                 goto BACK;
             }
             else if (nomer == "3")
