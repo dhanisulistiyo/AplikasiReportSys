@@ -35,7 +35,6 @@ namespace AppReportSystem
                 int score;
 
                 Report myReport = new Report(studentID,teacherID);
-                
 
                 for (int  i = 0;i<subjectQty;i++)
                 {
