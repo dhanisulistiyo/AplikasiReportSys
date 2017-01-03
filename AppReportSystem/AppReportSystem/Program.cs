@@ -138,12 +138,12 @@ namespace AppReportSystem
             }
             else if (nomer == "3")
             {
-                pSub.printSubject();
+                
                 goto BACK;
             }
             else if (nomer == "4")
             {
-                deleteData();
+                pSub.printSubject();
                 goto BACK;
             }
             else if (nomer == "5")
