@@ -13,9 +13,10 @@ namespace AppReportSystem
         {
             BACK:
             Console.Clear();
-            Console.WriteLine("=====================================");
-            Console.WriteLine("==Aplikasi HR SMKN 1 Cikarang Barat==");
-            Console.WriteLine("=====================================");
+            Console.WriteLine("\t\t=====================================");
+            Console.WriteLine("\t\t==Aplikasi HR SMKN 1 Cikarang Barat==");
+            Console.WriteLine("\t\t=====================================");
+            Console.WriteLine();
             Console.WriteLine("Pilih menu yang tersedia!");
             Console.WriteLine("1. Input Data");
             Console.WriteLine("2. Lihat Data");
@@ -23,7 +24,8 @@ namespace AppReportSystem
             Console.WriteLine("4. Hapus Data");
             Console.WriteLine("5. Cetak Raport");
             Console.WriteLine("6. Keluar");
-            Console.Write("Masukkan nomer: ");
+            Console.WriteLine();
+            Console.Write("Masukkan nomor menu: ");
             var nomer = Console.ReadLine();
             if (nomer == "1")
             {
@@ -57,7 +59,7 @@ namespace AppReportSystem
             else
             {
                 Console.Clear();
-                Console.WriteLine("Input Salah");
+                Console.WriteLine("Maaf, nomor yang anda inputkan salah");
                 Console.ReadLine();
                 goto BACK;
             }
@@ -76,7 +78,7 @@ namespace AppReportSystem
             Console.WriteLine("3. Input Data Nilai");
             Console.WriteLine("4. Input Data Mata Pelajaran ");
             Console.WriteLine("5. Keluar");
-            Console.Write("Masukkan nomer: ");
+            Console.Write("Masukkan nomor submenu: ");
             var nomer = Console.ReadLine();
             if (nomer == "1")
             {
@@ -105,7 +107,7 @@ namespace AppReportSystem
             else
             {
                 Console.Clear();
-                Console.WriteLine("Input Salah");
+                Console.WriteLine("Maaf, nomor yang anda inputkan salah");
                 Console.ReadLine();
                 goto BACK;
             }
@@ -122,7 +124,7 @@ namespace AppReportSystem
             Console.WriteLine("3. Lihat Data Nilai");
             Console.WriteLine("4. Lihat Data Mata Pelajaran ");
             Console.WriteLine("5. Keluar");
-            Console.Write("Masukkan nomer: ");
+            Console.Write("Masukkan nomor submenu: ");
             var nomer = Console.ReadLine();
             if (nomer == "1")
             {
@@ -151,7 +153,7 @@ namespace AppReportSystem
             else
             {
                 Console.Clear();
-                Console.WriteLine("Input Salah");
+                Console.WriteLine("Maaf, nomor yang anda inputkan salah");
                 Console.ReadLine();
                 goto BACK;
             }
@@ -168,7 +170,7 @@ namespace AppReportSystem
             Console.WriteLine("3. Edit Data Nilai");
             Console.WriteLine("4. Edit Data Mata Pelajaran ");
             Console.WriteLine("5. Keluar");
-            Console.Write("Masukkan nomer: ");
+            Console.Write("Masukkan nomor submenu: ");
             var nomer = Console.ReadLine();
             if (nomer == "1")
             {
@@ -197,7 +199,7 @@ namespace AppReportSystem
             else
             {
                 Console.Clear();
-                Console.WriteLine("Input Salah");
+                Console.WriteLine("Maaf, nomor yang anda inputkan salah");
                 Console.ReadLine();
                 goto BACK;
             }
@@ -215,7 +217,7 @@ namespace AppReportSystem
             Console.WriteLine("3. Delete Data Nilai");
             Console.WriteLine("4. Delete Data Mata Pelajaran ");
             Console.WriteLine("5. Keluar");
-            Console.Write("Masukkan nomer: ");
+            Console.Write("Masukkan nomor submenu: ");
             var nomer = Console.ReadLine();
             if (nomer == "1")
             {
@@ -244,7 +246,7 @@ namespace AppReportSystem
             else
             {
                 Console.Clear();
-                Console.WriteLine("Input Salah");
+                Console.WriteLine("Maaf, nomor yang anda inputkan salah");
                 Console.ReadLine();
                 goto BACK;
             }
@@ -260,7 +262,7 @@ namespace AppReportSystem
             Console.WriteLine("3. Input Data Nilai");
             Console.WriteLine("4. Input Data Mata Pelajaran ");
             Console.WriteLine("5. Keluar");
-            Console.Write("Masukkan nomer: ");
+            Console.Write("Masukkan nomor submenu: ");
             var nomer = Console.ReadLine();
             if (nomer == "1")
             {
@@ -289,7 +291,7 @@ namespace AppReportSystem
             else
             {
                 Console.Clear();
-                Console.WriteLine("Input Salah");
+                Console.WriteLine("Maaf, nomor yang anda inputkan salah");
                 Console.ReadLine();
                 goto BACK;
             }
