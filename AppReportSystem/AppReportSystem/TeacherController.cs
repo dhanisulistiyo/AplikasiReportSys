@@ -17,7 +17,7 @@ namespace AppReportSystem
         {
             Console.Clear();
 
-            Console.Write("Berapa banyak data Siswa yang dimasukkan : ");
+            Console.Write("Berapa banyak data Guru yang dimasukkan : ");
             num = Console.ReadLine();
             Console.WriteLine();
             for (i = 1; i <= Convert.ToInt32(num); i++)
@@ -31,9 +31,20 @@ namespace AppReportSystem
                 Console.Write("Masukkan ID : ");
                 id = Console.ReadLine();
                 Console.WriteLine();
+                //Console.Write("Masukkan Tanggal Lahir (yyyy-mm-dd): ");
+                //tgl_lahir = Console.ReadLine();
+                //Console.WriteLine();
+                DateTime tgllhir;
                 Console.Write("Masukkan Tanggal Lahir (yyyy-mm-dd): ");
-                tgl_lahir = Console.ReadLine();
-                Console.WriteLine();
+                if (DateTime.TryParse(Console.ReadLine(), out tgllhir))
+                {
+
+                    this.tgl_lahir = Convert.ToString(tgllhir);
+                }
+                else {
+                    Console.WriteLine("Inputan tanggal salah. Coba Lagi!");
+
+                }
                 Console.Write("Jenis Kelamin(L/P): ");
                 jk = Console.ReadLine();
                 Console.WriteLine();
@@ -146,8 +157,18 @@ namespace AppReportSystem
                     Console.Write("Masukkan Nama : ");
                     nama = Console.ReadLine();
                     Console.WriteLine();
+                    
+                    DateTime tgllhir;
                     Console.Write("Masukkan Tanggal Lahir (yyyy-mm-dd): ");
-                    tgl_lahir = Console.ReadLine();
+                    if (DateTime.TryParse(Console.ReadLine(), out tgllhir))
+                    {
+                        
+                        this.tgl_lahir =Convert.ToString(tgllhir);
+                    }
+                    else {
+                        Console.WriteLine("Inputan tanggal salah. Coba lagi!");
+                        
+                    }
                     Console.WriteLine();
                     Console.Write("Jenis Kelamin : ");
                     jk = Console.ReadLine();

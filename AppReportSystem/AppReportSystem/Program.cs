@@ -87,7 +87,7 @@ namespace AppReportSystem
             }
             else if (nomer == "2")
             {
-                viewData();
+                pTea.inputTeacher();
                 goto BACK;
             }
             else if (nomer == "3")
