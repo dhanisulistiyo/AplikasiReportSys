@@ -14,8 +14,6 @@ namespace AppReportSystem.Model
         public Student() : base() {
              
         }
-
-
         public Student(string name, string id, DateTime birth, string gender, string kelas) : base(name, id, birth, gender)
         {
             this.ofClass = kelas;

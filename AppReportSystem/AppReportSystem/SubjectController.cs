@@ -11,7 +11,7 @@ namespace AppReportSystem
     {
         SchoolContext db = new SchoolContext();
         int i;
-        string nama, id, num, answer;
+        string nama, id, kkm, num, answer;
         //Create Student
         public void inputSubject()
         {
@@ -23,12 +23,14 @@ namespace AppReportSystem
             {
                 Console.Clear();
                 Console.WriteLine("========= Input Data Mata Pelajaran " + i + " ==========");
+                Console.Write("Masukkan ID : ");
+                id = Console.ReadLine();
                 Console.Write("Masukkan Nama Mata Pelajaran : ");
                 nama = Console.ReadLine();
-                Console.Write("Masukkan ID : ");
-                id = Console.ReadLine();               
-                Subject t = new Subject(nama, id);
-                db.Subjects.Add(t);
+                Console.Write("Masukkan Nilai KKM : ");
+                kkm = Console.ReadLine();
+                Subject s = new Subject(nama, id, Convert.ToInt32(kkm));
+                db.Subjects.Add(s);
                 db.SaveChanges();
             }
         }
